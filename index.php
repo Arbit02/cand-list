@@ -4,8 +4,8 @@ function GetCand($name, $birth)
 {
     $url = 'http://info.vybory.pro/poisk-kandidata?label_advanced_search=0&search_fio='.$name.'&reg_el=1000&year_el=9999&dat1_el=01-01-2003&dat2_el=31-12-2026&cck_storage_location=free&lev_el=1%2C2%2C3%2C4&w_type_el=1%2C2%2C3&work__party_select=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C1000&work_status=0%2C1%2C2%2C3&search=list_user&task=search';
     $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Возвращать ответ как строку
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // Следовать за редиректами
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
     $html = curl_exec($ch);
     $dom = new DOMDocument;
 // Игнорируем ошибки парсинга :)
